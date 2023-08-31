@@ -1,5 +1,9 @@
 import {motion} from 'framer-motion';
+import React from 'react';
+import Typewriter from "typewriter-effect";
+
 export default function Hero() {
+
   return (
     <section className="w-full overflow-hidden -my-8 gap-4 ">
       <div className="relative overflow-hidden bg-cover bg-fixed bg-no-repeat bg-[50%] h-[100vh] bg-[url('app/assets/hero_weed.jpeg')]">
@@ -21,8 +25,27 @@ export default function Hero() {
               className="px-6 text-center text-white md:px-12"
             >
               <h1 className="mt-6 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
-                Most reliable <span className="text-[#22d3ee]">CBD </span>
-                retailer <br />
+                Most reliable    <span className="text-[#22d3ee]">    CBD   <Typewriter
+ 
+ onInit={(typewriter) => {
+     typewriter
+         .typeString("retailer")
+         .pauseFor(800)
+         .deleteAll()
+         .typeString("experts")
+         .pauseFor(1000)
+         .deleteAll()
+         .typeString("provider")
+         .pauseFor(1000)
+         .deleteAll()
+         .typeString("family")
+         .pauseFor(1000)
+         .deleteAll()
+         .typeString("retailer")
+         .start();
+ }}
+/> </span>
+           
                 <span>in your city</span>
               </h1>
               <a

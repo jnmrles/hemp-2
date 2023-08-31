@@ -4,9 +4,9 @@ import {Suspense} from 'react';
 export function Header({header, isLoggedIn, cart}) {
   const {shop, menu} = header;
   return (
-    <header className="header">
+    <header className="header bg-[#0B0c10 ]">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+        <strong>Be.Hempy</strong>
       </NavLink>
       <HeaderMenu menu={menu} viewport="desktop" />
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
@@ -58,12 +58,27 @@ export function HeaderMenu({menu, viewport}) {
             style={activeLinkStyle}
             to={url}
           >
-            {item.title}
+            {
+            
+            
+           test(item.title) 
+            
+            }
           </NavLink>
         );
       })}
     </nav>
   );
+}
+
+function test(title){
+
+  if(title == "Men" || title == "Women" || title == "Unisex" ){
+    return ("CBD")
+  }
+  
+  return title
+
 }
 
 function HeaderCtas({isLoggedIn, cart}) {

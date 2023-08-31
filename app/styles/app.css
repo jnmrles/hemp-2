@@ -129,7 +129,8 @@ aside li {
 */
 .header {
   align-items: center;
-  background: #fff;
+ 
+  background: #0B0c10 ;
   display: flex;
   height: var(--header-height);
   padding: 0 1rem;
@@ -331,7 +332,9 @@ aside li {
 }
 
 .recommended-product img {
-  height: auto;
+  height: auto
+
+  
 }
 
 /*
