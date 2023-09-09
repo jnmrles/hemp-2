@@ -6,7 +6,7 @@ export default function Hero() {
 
   return (
     <section className="w-full overflow-hidden -my-8 gap-4 ">
-      <div className="relative overflow-hidden bg-cover bg-fixed bg-no-repeat bg-[50%] h-[100vh] bg-[url('app/assets/hero_weed.jpeg')]">
+      <div className="relative overflow-hidden  bg-fixed bg-cover bg-no-repeat bg-[50%] h-[100vh] bg-[url('app/assets/hero_weed.jpeg')]">
         <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed bg-[hsla(0,0%,0%,0.55)]">
           <div className="flex h-full items-center justify-center">
             <motion.div

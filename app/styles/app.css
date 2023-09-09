@@ -6,7 +6,61 @@
   --header-height: 64px;
   --color-dark: #000;
   --color-light: #fff;
+
 }
+
+.center{
+  margin-top: 5%; 
+  translate:(-50%, -50%);
+  text-align: center;
+  background-color: antiquewhite;
+}
+.center h1
+{
+  text-transform: uppercase;
+  font-size: 12em;
+  color: rgba(0,0,0,.2);
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  transform-origin: bottom;
+  transform: skewX(50deg);
+}
+.center h6
+{
+  letter-spacing: 4.5em;
+  font-size: 2em;
+  color: rgba(0,0,0,0.2);
+  position: relative;
+  margin: auto 0;
+  padding: 0;
+  transform-origin: bottom;
+  transform: skewX(50deg);
+
+}
+
+.center h1:before
+{
+  content: attr(data-title);
+  position: absolute;
+  color: #fff;
+  transform-origin: bottom;
+  transform: skewX(-50deg) translate(-70px, 29px) scaleY(1.5);
+}
+.center h6:before
+{
+  letter-spacing: 4.5em;
+  content: attr(data-title1);
+  position: absolute;
+  color: #fff;
+  transform-origin: bottom;
+  transform: skewX(-50deg) translate(-11px, 1px) scaleY(1);
+}
+
+
+
+
+
 
 img {
   border-radius: 4px;
@@ -18,8 +72,13 @@ img {
 * --------------------------------------------------
 */
 aside {
-  background: var(--color-light);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+
+  box-shadow: 0 0 50px rgba(65, 211, 219, 0.3);
   height: 100vh;
   max-width: var(--aside-width);
   min-width: var(--aside-width);
@@ -27,15 +86,18 @@ aside {
   right: calc(-1 * var(--aside-width));
   top: 0;
   transition: transform 200ms ease-in-out;
+  z-index: 1000 !important;
 }
 
 aside header {
+  color:white;
   align-items: center;
-  border-bottom: 1px solid var(--color-dark);
+  border-bottom: 1px solid cyan;
   display: flex;
   height: var(--header-height);
   justify-content: space-between;
   padding: 0 20px;
+  margin-bottom: 5px;;
 }
 
 aside header h3 {
@@ -43,6 +105,7 @@ aside header h3 {
 }
 
 aside header .close {
+  color:white;
   font-weight: bold;
   opacity: 0.8;
   text-decoration: none;
@@ -56,6 +119,7 @@ aside header .close {
 aside header h2 {
   margin-bottom: 0.6rem;
   margin-top: 0;
+  color: #fff;
 }
 
 aside main {
@@ -63,14 +127,17 @@ aside main {
 }
 
 aside p {
+  color: #fff;
   margin: 0 0 0.25rem;
   &:last-child {
     margin: 0;
   }
+
 }
 
 aside li {
   margin-bottom: 0.125rem;
+  color: #fff;
 }
 
 .overlay {
@@ -208,6 +275,7 @@ aside li {
   max-height: calc(100vh - var(--cart-aside-summary-height));
   overflow-y: auto;
   width: auto;
+  padding: 2%;
 }
 
 .cart-main.with-discount {
@@ -216,6 +284,7 @@ aside li {
 
 .cart-line {
   display: flex;
+  justify-content: space-evenly;
   padding: 0.75rem 0;
 }
 
@@ -230,12 +299,16 @@ aside li {
 }
 
 .cart-summary-aside {
-  background: white;
-  border-top: 1px solid var(--color-dark);
+ color:antiquewhite;
+  border-top: 1px solid cyan;
   bottom: 0;
   padding-top: 0.75rem;
   position: absolute;
   width: calc(var(--aside-width) - 40px);
+}
+
+.cart-summary-asid input {
+  background-color: aqua !important;
 }
 
 .cart-line-quantiy {
@@ -246,6 +319,7 @@ aside li {
   align-items: center;
   display: flex;
   margin-top: 0.25rem;
+  background-color: #000;
 }
 
 .cart-subtotal {

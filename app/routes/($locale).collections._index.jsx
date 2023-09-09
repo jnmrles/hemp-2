@@ -1,6 +1,7 @@
 import {useLoaderData, Link} from '@remix-run/react';
 import {json} from '@shopify/remix-oxygen';
 import {Pagination, getPaginationVariables, Image} from '@shopify/hydrogen';
+import {motion} from 'framer-motion';
 
 export async function loader({context, request}) {
   const paginationVariables = getPaginationVariables(request, {
@@ -18,8 +19,9 @@ export default function Collections() {
   const {collections} = useLoaderData();
 
   return (
-    <div className="collections">
-      <h1>Collections</h1>
+    <div className="collections text-center ">
+      <h1 className='text-cyan-500 font-xl text-4xl'>ALL COLLECTIONS</h1>
+
       <Pagination connection={collections}>
         {({nodes, isLoading, PreviousLink, NextLink}) => (
           <div>
@@ -39,7 +41,7 @@ export default function Collections() {
 
 function CollectionsGrid({collections}) {
   return (
-    <div className="collections-grid">
+    <div className="collections-grid p-4">
       {collections.map((collection, index) => (
         <CollectionItem
           key={collection.id}
@@ -53,8 +55,20 @@ function CollectionsGrid({collections}) {
 
 function CollectionItem({collection, index}) {
   return (
+    <motion.div  className='p-6  border border-cyan-500 shadow-lg hover:shadow-cyan-500/50 bg-black
+    -500 rounded-md bg-clip-padding backdrop-filter text-center backdrop-blur-sm bg-opacity-10 text-white'    whileTap={{ scale: 0.9 }}
+    initial="hidden"
+    whileInView="visible"
+    
+animate={{x: [0, 100, 0]}}
+    viewport={{ once: true }}
+    transition={{ duration: .3 }}
+    variants={{
+      visible: { opacity: 1, scale: 1 },
+      hidden: { opacity: 0, scale: 0 }
+    }}>
     <Link
-      className="collection-item"
+      className="collection-item "
       key={collection.id}
       to={`/collections/${collection.handle}`}
       prefetch="intent"
@@ -69,6 +83,7 @@ function CollectionItem({collection, index}) {
       )}
       <h5>{collection.title}</h5>
     </Link>
+    </motion.div>
   );
 }
 

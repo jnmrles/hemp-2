@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 const Accordion = () => {
   return (
-    <section className="relative z-20 overflow-hidden bg-[#0b0c10] pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
+    <section className="relative z-10 overflow-hidden bg-[#0b0c10] pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -54,7 +54,7 @@ const Accordion = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0 z-[-1]">
+      <div className="absolute bottom-0 right-0 z-[-10]">
         <svg
           width="2440"
           height="886"

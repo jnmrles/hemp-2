@@ -53,7 +53,7 @@ function CartLineItem({layout, line}) {
   const lineItemUrl = useVariantUrl(product.handle, selectedOptions);
 
   return (
-    <li key={id} className="cart-line">
+    <li key={id} className="cart-line border border-cyan-500 bg-black/50 mb-2">
       {image && (
         <Image
           alt={title}
@@ -76,21 +76,21 @@ function CartLineItem({layout, line}) {
             }
           }}
         >
-          <p>
+          <p  className='text-white'>
             <strong>{product.title}</strong>
           </p>
         </Link>
-        <CartLinePrice line={line} as="span" />
-        <ul>
+        <CartLinePrice  className='text-white' line={line} as="span" />
+        <ul className='text-white'>
           {selectedOptions.map((option) => (
-            <li key={option.name}>
-              <small>
+            <li  key={option.name}>
+              <small >
                 {option.name}: {option.value}
               </small>
             </li>
           ))}
         </ul>
-        <CartLineQuantity line={line} />
+        <CartLineQuantity  className='text-white' line={line} />
       </div>
     </li>
   );
@@ -201,7 +201,7 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
   return (
     <div hidden={hidden}>
       <br />
-      <p>
+      <p className='text-white'>
         Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
         started!
       </p>
@@ -245,7 +245,7 @@ function CartDiscounts({discountCodes}) {
       {/* Show an input to apply a discount */}
       <UpdateDiscountForm discountCodes={codes}>
         <div>
-          <input type="text" name="discountCode" placeholder="Discount code" />
+          <input className='bg-black/50 border border-cyan-500' type="text" name="discountCode" placeholder="Discount code" />
           &nbsp;
           <button type="submit">Apply</button>
         </div>
@@ -262,6 +262,7 @@ function UpdateDiscountForm({discountCodes, children}) {
       inputs={{
         discountCodes: discountCodes || [],
       }}
+    
     >
       {children}
     </CartForm>

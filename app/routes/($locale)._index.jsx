@@ -37,12 +37,12 @@ export default function Homepage() {
       <Accordion/>
       <section class="mb-32 p-0 ">
     <div
-      class="relative h-[300px] flex justify-center items-center overflow-hidden bg-cover bg-[50%] bg-no-repeat bg-[url('../assets/ok.jpg')]">
-     <h4 className='font-bold text-6xl text-white'> CONTACT US </h4> </div>
+      class="relative h-[300px] flex justify-center items-center overflow-hidden bg-cover bg-[50%] bg-no-repeat  bg-fixed  bg-[url('../assets/ok.jpg')]">
+     <h4 className='font-bold text-6xl text-gray-300'> <span className='text-[#22d3ee]/100'>CONTACT </span>  US </h4> </div>
     <div class=" flex
       justify-center m-0 ">
       <div
-        class=" w-[80%] block rounded-lg bg-black bg-opacity-40 px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] bg-clip-padding backdrop-filter backdrop-blur-sm">
+        class=" w-[80%] border border-cyan-500 block rounded-lg bg-black bg-opacity-40 px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] bg-clip-padding backdrop-filter backdrop-blur-sm">
          
         <div class="mb-12 grid gap-x-6 md:grid-cols-2 lg:grid-cols-4">
         
@@ -99,7 +99,7 @@ export default function Homepage() {
 
 const Service = () => {
   return (
-    <section className=" pt-0 pb-0   overflow-hidden bg-cover bg-fixed  bg-no-repeat bg-[60%] bg-[url('../assets/cb4.jpg')]">
+    <section className=" pt-0 pb-0   overflow-hidden bg-cover bg-fixed  bg-no-repeat bg-[60%] bg-[url('../assets/hempy.png')]">
       <section className=' mt-0 top-0 right-0 bottom-0 left-0 h-full w-full bg-fixed bg-[hsla(0,0%,0%,0.55)]'>
       <div className="container mx-auto">
         <div className="flex flex-wrap -mx-4">
@@ -109,7 +109,7 @@ const Service = () => {
                 Our Services
               </span>
               <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-[40px]">
-                What We Offer
+                What We <span className='text-[#22d3ee]'> Offer</span>
               </h2>
               <p className="text-base text-gray-300">
                 There are many variations of passages of Lorem Ipsum available
@@ -322,12 +322,12 @@ function About(){
         className="grid grid-cols-2 gap-4 mt-8"
       >
         <img
-          className="w-full rounded-lg"
+          className="w-full rounded-lg border shadow-sm shadow-cyan-500 border-md border-cyan-500"
           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
           alt="office content 1"
         />
         <img
-          className="mt-4 w-full lg:mt-10 rounded-lg"
+          className="mt-4 w-full lg:mt-10 rounded-lg shadow-sm shadow-cyan-500 border border-cyan-500"
           src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
           alt="office content 2"
         />
@@ -356,14 +356,14 @@ function FeaturedCollection({collection}) {
 function RecommendedProducts({products}) {
 
   return (
-    <div className="lg:mt-20 text-center recommended-products p-6">
+    <div className="lg:mt-5 mb-10 text-center recommended-products p-6">
       <h2 className="text-4xl mb-14 text-white"><span className='text-[#22d3ee]'>Recommended</span> Products</h2>
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
           {({products}) => (
             <div className="recommended-products-grid p-2" >
               {products.nodes.map((product) => (
-                <motion.div className=' p-6  border border-cyan-500 shadow-lg shadow-cyan-500/50 bg-black
+                <motion.div className=' p-6  border border-cyan-500 shadow-lg hover:shadow-cyan-500/50 bg-black
                 -500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10   ' whileHover={{ scale: 1.09, duration:.1 }}
                 whileTap={{ scale: 0.9 }}
                 initial="hidden"
